@@ -1,6 +1,6 @@
 **Note: Before run this app please make sure MongoDB server is running.
 
-1. After unzip folder, open CMD and go to root folder and run 'npm install' to download dependencies.
+1. Clone this repo and then open CMD and go to root folder and run 'npm install' to download dependencies.
 2. run 'node index.js' to start the node server
 3. after start server open postman or any other rest api test tool
 4. To read and save data in mongodb use below api
