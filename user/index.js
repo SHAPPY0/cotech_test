@@ -1,7 +1,7 @@
 'use strict';
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/usersModel');
-
+const SECTER_KEY = 'abcdefghijklmnopqrstuvwx1234567890';
 module.exports = (app)=>{ 
   
   // user registration
@@ -29,7 +29,7 @@ module.exports = (app)=>{
         else {
             delete user['password'];
             let d = {_id:user._id, userid:user.userid};
-            jwt.sign(d, 'hqwhqhwiuehiquwhei', (err, token)=>{
+            jwt.sign(d, SECTER_KEY, (err, token)=>{
                 if(err) return res.send({'succes':false, 'msg':'Error in loggin '+err});
                 return res.send({'success':true, 'msg':'loggedin successfully', user:user, token:token});
             });
